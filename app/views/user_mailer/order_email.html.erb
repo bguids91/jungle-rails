@@ -4,10 +4,10 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Order # </h1>
-    <h1>Thank you for your order </h1>
+    <h1>Order # - <%= @order.id %>
+    <h1>Thank you for your order, <%= @user.first_name %> </h1>
     <p>
-      Your order has successfully gone through the Jungle
+      Your order has successfully gone through the Jungle.
     <br>
     </p>
     <p>
@@ -15,7 +15,16 @@
     </p>
     <p>Here are your order details</p>
 
-    <p> Total Price: </p>
+    <% @order.line_items.each do |item| %>
+      <p>Name: <%= item.product.name %></p>
+      <p>Decription: <%= item.product.description %></p>
+      <p>Price: $<%= item.product.price %></p>
+      <p>Quantity: <%= item.quantity %></p>
+      <p>Total Item Price: $<%= item.product.price * item.quantity %></p>
+      <br>
+    <% end %>
+
+    <p> Total Price: $<%= @order.total_cents / 100 %> </p>
     <br>
     <p>Thank you for shopping at the Jungle. Hope to see you again!</p>
   </body>

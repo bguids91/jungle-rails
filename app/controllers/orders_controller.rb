@@ -54,8 +54,7 @@ class OrdersController < ApplicationController
       )
     end
     order.save!
-    p current_user
-    UserMailer.order_email(current_user).deliver_later
+    UserMailer.order_email(current_user, order).deliver_later
     order
   end
 end
