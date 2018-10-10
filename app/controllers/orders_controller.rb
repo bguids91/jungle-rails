@@ -30,12 +30,13 @@ class OrdersController < ApplicationController
     Stripe::Charge.create(
       source:      params[:stripeToken],
       amount:      cart_subtotal_cents,
-      description: "Khurram Virani's Jungle Order",
+      description: "Customers Jungle Order",
       currency:    'cad'
     )
   end
 
   def create_order(stripe_charge)
+
     order = Order.new(
       email: params[:stripeEmail],
       total_cents: cart_subtotal_cents,
@@ -53,7 +54,8 @@ class OrdersController < ApplicationController
       )
     end
     order.save!
+    p current_user
+    UserMailer.order_email(current_user).deliver_later
     order
   end
-
 end

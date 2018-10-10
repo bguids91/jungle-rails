@@ -1,6 +1,6 @@
 
 class UserMailerPreview < ActionMailer::Preview
   def order_email
-    UserMailer.with(user: User.first).order_email
+    UserMailer.order_email(@user).deliver_now
   end
 end
