@@ -25,9 +25,9 @@
           <dd><%= @product.price %></dd>
         </dl>
         <h5>Product Rating</h5>
-        <%= form_for @product.reviews do |f| %>
+       <%= form_for([@product, @review]) do |f| %>
           Description : <%= f.text_area :description %><br />
-          Rating    : <%= f.text_area :rating %><br />
+          Rating : <%= f.number_field :rating %><br />
         <%= f.submit %>
         <% end %>
         <% @product.reviews.each do |item| %>
