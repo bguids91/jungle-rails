@@ -39,6 +39,7 @@
     </table>
   </div>
 
+  <% if current_user != nil %>
   <div class="row">
     <div class="col-xs-12">
       <%= form_tag orders_path do %>
@@ -55,6 +56,10 @@
       <% end %>
     </div>
   </div>
+  <% else %>
+  <h2>Only users can purchase from the Jungle! Please <%= link_to "Signup", '/signup' %> and try again!</h2>
+
+  <% end %>
   <% end %>
 
 </section>
