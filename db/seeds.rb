@@ -141,15 +141,113 @@ Review.destroy_all
 Review.create!({
   product_id: 1,
   user_id: 1,
-  description: 'Really Great',
+  description: 'Nice shirt!',
   rating: 5
 })
 
 Review.create!({
   product_id: 1,
   user_id: 2,
-  description: 'Too tight',
+  description: 'Too tight, plus colour sucks.',
   rating: 2
+})
+
+Review.create!({
+  product_id: 2,
+  user_id: 1,
+  description: 'Ugly!',
+  rating: 2
+})
+
+Review.create!({
+  product_id: 3,
+  user_id: 1,
+  description: 'Cool hat',
+  rating: 4
+})
+
+Review.create!({
+  product_id: 4,
+  user_id: 1,
+  description: 'Not bad',
+  rating: 2
+})
+
+Review.create!({
+  product_id: 5,
+  user_id: 1,
+  description: 'Cool shoes',
+  rating: 5
+})
+
+Review.create!({
+  product_id: 6,
+  user_id: 1,
+  description: 'Gross!',
+  rating: 1
+})
+
+Review.create!({
+  product_id: 7,
+  user_id: 1,
+  description: 'Fell and broke my wrist.',
+  rating: 1
+})
+
+Review.create!({
+  product_id: 8,
+  user_id: 1,
+  description: 'Mmmmmmmm...hot dogs',
+  rating: 5
+})
+
+Review.create!({
+  product_id: 9,
+  user_id: 1,
+  description: 'Already broke. Garbage!',
+  rating: 1
+})
+
+Review.create!({
+  product_id: 10,
+  user_id: 1,
+  description: 'Comfortable!',
+  rating: 4
+})
+
+Review.create!({
+  product_id: 11,
+  user_id: 1,
+  description: 'Not comfortable!',
+  rating: 2
+})
+
+Review.create!({
+  product_id: 11,
+  user_id: 2,
+  description: 'Cool chair!',
+  rating: 5
+})
+
+Review.create!({
+  product_id: 12,
+  user_id: 1,
+  description: 'Cool bookshelf!',
+  rating: 5
+})
+
+Review.create!({
+  product_id: 12,
+  user_id: 2,
+  description: 'Nice for books!',
+  rating: 4
+})
+
+Review.create!({
+  product_id: 12,
+  user_id: 3,
+  description: 'Broken already.',
+  rating: 1
 })
 
 puts "DONE!"

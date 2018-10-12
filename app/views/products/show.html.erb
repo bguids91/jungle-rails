@@ -30,7 +30,7 @@
         <h5>Please enter a review</h5>
         <%= form_for([@product, @review]) do |f| %>
           Description : <%= f.text_area :description %><br>
-          Rating : <%= f.number_field :rating %><br>
+          Rating : <%= f.select :rating, [1, 2, 3, 4, 5] %><br>
         <%= f.submit %>
         <% end %>
         <% end %>

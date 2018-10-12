@@ -5,7 +5,7 @@ class UserMailer < ApplicationMailer
     @user = user
     @order = order
     @url  = 'http://localhost:3000/login'
-    mail(to: @user.email, subject: 'Order from the Jungle - ORDER #')
+    mail(to: @user.email, subject: "Order from the Jungle - ORDER# #{@order.id}")
   end
 
 end
